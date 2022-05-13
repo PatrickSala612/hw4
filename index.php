@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Lab One</title>
+        <title>HW4</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -47,9 +47,10 @@
                 </head>
                 <tbody>
                     <?php 
-                        include "config/database.php";
+
+                        include"config/database.php";
                     
-                        $query = "SELECT id, name, email, phone, title, createdDate, modifiedDate FROM contacts ORDER by id ASC";
+                        $query = "SELECT ID, Name, email, Phone, Title, Created_Date, Modified_Date FROM contacts ORDER by id ASC";
 
                         $stmt = $con->prepare($query);
                         $stmt->execute();
@@ -59,17 +60,17 @@
                             extract($row);
 
                             echo "<tr>";
-                            echo "  <td>{$id}</td>";
-                            echo "  <td>{$name}</td>";
+                            echo "  <td>{$ID}</td>";
+                            echo "  <td>{$Name}</td>";
                             echo "  <td>{$email}</td>";
-                            echo "  <td>{$phone}</td>";
-                            echo "  <td>{$title}</td>";
-                            echo "  <td>{$createdDate}</td>";
-                            echo "  <td>{$modifiedDate}</td>";
+                            echo "  <td>{$Phone}</td>";
+                            echo "  <td>{$Title}</td>";
+                            echo "  <td>{$Created_Date}</td>";
+                            echo "  <td>{$Modified_Date}</td>";
                             echo "  <td>";
-                            echo "      <a href='read.php?id={$id}'  class='btn btn-primary btn-sm'>Read</a>";
-                            echo "      <a href='update.php?id={$id}'  class='btn btn-warning btn-sm'>Edit</a>";
-                            echo "      <a href='#' onclick='delete_user({$id})' class='btn btn-danger btn-sm'>Delete</a>";
+                            echo "      <a href='read.php?id={$ID}'  class='btn btn-primary btn-sm'>Read</a>";
+                            echo "      <a href='update.php?id={$ID}'  class='btn btn-warning btn-sm'>Edit</a>";
+                            echo "      <a href='#' onclick='delete_user({$ID})' class='btn btn-danger btn-sm'>Delete</a>";
                             echo "  </td>";
                             echo "</tr>";
                             
